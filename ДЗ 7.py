@@ -4,13 +4,13 @@ BANK: 1000
 
 APE-FTT
 
-Покупка
+РџРѕРєСѓРїРєР°
 
-Вход: 20.11
+Р’С…РѕРґ: 20.11
 
-Таргет: 21.5; 22.8; 23.5
+РўР°СЂРіРµС‚: 21.5; 22.8; 23.5
 
-Выход: 19.0
+Р’С‹С…РѕРґ: 19.0
 
 BANK: 1000
 
@@ -88,8 +88,11 @@ class StrategyDeal(object):
         return sizes
 
     def __str__(self):
-        return f"BANK: {self.bank}\nSTART_PRICE: {self.entry}\nSTOP_PRICE: {self.close}\nPAIR: {self.pair} \n\n1 target: {StrategyDeal.get_targets(self)[0]}\nPercent: {StrategyDeal.get_target_percents(self)[0]}%\nBank: {StrategyDeal.get_target_banks(self)[0]}\nTarget size: {StrategyDeal.get_size(self)[0]}\n\n2 target: {StrategyDeal.get_targets(self)[1]}\nPercent: {StrategyDeal.get_target_percents(self)[1]}%\nBank: {StrategyDeal.get_target_banks(self)[1]}\nTarget size: {StrategyDeal.get_size(self)[1]}\n\n3 target: {StrategyDeal.get_targets(self)[2]}\nPercent: {StrategyDeal.get_target_percents(self)[2]}%\nBank: {StrategyDeal.get_target_banks(self)[2]}\nTarget size: {StrategyDeal.get_size(self)[2]}"
-
+        return f"BANK: {self.bank}\nSTART_PRICE: {self.entry}\nSTOP_PRICE: {self.close}\nPAIR: {self.pair} \n\n1 target: {StrategyDeal.get_targets(self)[0]}\nPercent: 
+{StrategyDeal.get_target_percents(self)[0]}%\nBank: {StrategyDeal.get_target_banks(self)[0]}\nTarget size: {StrategyDeal.get_size(self)[0]}\n\n2 target: 
+{StrategyDeal.get_targets(self)[1]}\nPercent: {StrategyDeal.get_target_percents(self)[1]}%\nBank: {StrategyDeal.get_target_banks(self)[1]}\nTarget size: 
+{StrategyDeal.get_size(self)[1]}\n\n3 target: {StrategyDeal.get_targets(self)[2]}\nPercent: {StrategyDeal.get_target_percents(self)[2]}%\nBank: 
+{StrategyDeal.get_target_banks(self)[2]}\nTarget size: {StrategyDeal.get_size(self)[2]}"
 
 
 
@@ -130,11 +133,11 @@ def prepare(content):
         elif i == 2:
             option = splitted[i]
         elif i == 3:
-            entry = float(splitted[i].lstrip('Вход: '))
+            entry = float(splitted[i].lstrip('Г‚ГµГ®Г¤: '))
         elif i == 4:
-            target = list(map(float, splitted[i].lstrip('Таргет: ').split('; ')))
+            target = list(map(float, splitted[i].lstrip('Г’Г Г°ГЈГҐГІ: ').split('; ')))
         elif i == 5:
-            close = float(splitted[i].lstrip('Выход: '))
+            close = float(splitted[i].lstrip('Г‚Г»ГµГ®Г¤: '))
     data = bank, pair, option, entry, target, close
     return data
    
