@@ -59,7 +59,8 @@ if __name__ == '__main__' :
 
 
 
-class StrategyDeal(object):
+
+ class StrategyDeal(object):
     def __init__(self, bank, pair, option, entry, target, close):
         self.bank = bank
         self.pair = pair
